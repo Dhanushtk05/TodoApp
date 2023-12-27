@@ -98,7 +98,7 @@ exports.sendNotification = catchAsyncError( async(req,res,next)=>{
       let minute = today.getMinutes();
       let maxminute = minute+5;
 
-      if(maxminute>60){
+      if(maxminute>=60){
         maxhour=maxhour+1;
         maxminute = maxminute-60;
       }
