@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 import "./LandingPage.css";
 
-
 function LandingPage() {
 
   const navigate = useNavigate();
