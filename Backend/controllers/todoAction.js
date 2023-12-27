@@ -87,22 +87,33 @@ exports.updateTask = catchAsyncError(async (req,res,next)=>{
 exports.sendNotification = catchAsyncError( async(req,res,next)=>{
 
     setInterval( async ()=>{
+
       const today = new Date();
       let hour = today.getHours();
+      let maxhour = today.getHours();
       if(hour<10){
         hour = 0+""+hour;
       }
+
       let minute = today.getMinutes();
       let maxminute = minute+5;
+
+      if(maxminute>60){
+        maxhour=maxhour+1;
+        maxminute = maxminute-60;
+      }
+
       if(minute<10){
         minute = 0+""+minute;
       }
+
       if(maxminute<10){
         maxminute=0+""+maxminute;
       }
+
       const time = hour+":"+minute;
 
-      const maxtime = hour+":"+maxminute;
+      const maxtime = maxhour+":"+maxminute;
      
       const year = today.getFullYear();
       const month = today.getUTCMonth()+1;
@@ -115,13 +126,15 @@ exports.sendNotification = catchAsyncError( async(req,res,next)=>{
         console.log("No task",time,maxtime);
         return;
       }
+
       if(tasks.length !==0){
         tasks.map( async (task)=>{
           const user = await User.findById(task.userid);
+          const message = `You have task to do \n\n Task : ${task.task} \n\n Task Time : ${task.time}`
           sendEmail({
             email:user.email,
             subject:"Task Notification",
-            message : task.task
+            message
           });
         });
       }
