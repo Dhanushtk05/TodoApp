@@ -1,0 +1,75 @@
+.homepage{
+    background:linear-gradient(rgba(0, 0, 0, 0.471),rgba(0, 0, 0, 0.4)) ,url('../../public/home.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.main-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 80vh;
+}
+
+.create{
+    background: rgb(202, 18, 18);
+    width: 15vw;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.create > button{
+    border: none;
+    color: white;
+    font-size: 20px;
+    background: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.show{
+    background: rgb(0, 190, 254);
+    width: 15vw;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.show > button{
+    border: none;
+    color: white;
+    font-size: 20px;
+    background: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.delete{
+    background: rgb(26, 9, 219);
+    width: 15vw;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.delete > button{
+    border: none;
+    color: white;
+    font-size: 20px;
+    background: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

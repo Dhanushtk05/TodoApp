@@ -1,0 +1,26 @@
+.layoutfooter{
+    background-color: white;
+    margin-top: 2%;
+    color: black;
+    padding: 0.5%;
+}
+
+.layoutfooter p{
+    font-size: small;
+    margin-left: 35%;
+    margin-bottom: 2px;
+}
+
+.layoutfooter p span{
+  color: orangered;
+}
+
+@media screen and (max-width:600px) {
+    .layoutfooter p{
+        margin-left: 4%;
+    }
+
+    .layoutfooter{
+        margin-top: 3%;
+    }
+}

@@ -1,0 +1,37 @@
+.profilepage{
+    background: black;
+    color: white;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.Profile-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.profileimage{
+    color: blue;
+    margin-top: 3%;
+}
+
+.Profile-details >h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
+
+.profile-text{
+    margin-top: 3%;
+    margin-left: 7%;
+    min-height: 35vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+span{
+    color: orangered;
+}
+.profile-text2{
+    margin-top: 6%;
+}

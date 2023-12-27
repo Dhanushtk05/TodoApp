@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Kalnia&display=swap');
+
+.landingpage{
+     background: linear-gradient(rgba(18, 18, 18, 0.5),rgba(18, 18, 18, 0.5)), url('../../../public/landimage.jpg');
+     width: 100vw;
+     height: 100vh;
+     background-repeat: no-repeat;
+     background-size: cover;
+     color: whitesmoke;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.pagecontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    margin-right: 10%;
+    margin-top: 11%;
+    height: 50vh;
+}
+
+.headcontent >h1{
+    font-family: 'Dancing Script', cursive ,'Kalnia', serif;
+    font-size: 60px;
+    filter: drop-shadow(0 0 0.75rem #554cf5);
+    padding: 5px;
+}
+
+.landbuttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+    width: 25vw;
+    padding: 5%;
+   
+}
+
+.signup{
+    font-size: 20px;
+    border: none;
+    background: #EA7816;
+    color: white;
+    padding: 3% 6%;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.signup:hover{
+    background:transparent;
+    border: 1px solid black;
+}
+
+.login{
+    font-size: 20px;
+    background:transparent;
+    color: white;
+    font-weight: bolder;
+    padding: 3% 7%;
+    cursor: pointer;
+}
+
+.login:hover{
+    background: #7A77B9;
+}
+
+
