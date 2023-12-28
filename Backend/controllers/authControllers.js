@@ -79,6 +79,7 @@ exports.logoutuser = catchAsyncError(async(req,res,next)=>{
 
 });
 
+
 exports.forgotPassword = catchAsyncError( async (req, res, next)=>{
     const user =  await User.findOne({email: req.body.email});
 
