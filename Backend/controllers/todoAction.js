@@ -90,40 +90,36 @@ exports.sendNotification = catchAsyncError( async(req,res,next)=>{
 
       const today = new Date();
       let hour = today.getHours();
-      let maxhour = today.getHours();
+
       if(hour<10){
         hour = 0+""+hour;
       }
 
       let minute = today.getMinutes();
-      let maxminute = minute+5;
-
-      if(maxminute>=60){
-        maxhour=maxhour+1;
-        maxminute = maxminute-60;
-      }
-
       if(minute<10){
         minute = 0+""+minute;
       }
 
-      if(maxminute<10){
-        maxminute=0+""+maxminute;
+      const time = hour+":"+minute;    
+
+      const year = today.getFullYear();
+
+      let month = today.getUTCMonth()+1;
+      if(month<10){
+        month = 0+""+month;
       }
 
-      const time = hour+":"+minute;
+      let date = today.getDate();
+      if(date<10){
+        date = 0+""+date;
+      }
 
-      const maxtime = maxhour+":"+maxminute;
-     
-      const year = today.getFullYear();
-      const month = today.getUTCMonth()+1;
-      const date = today.getDate();
       const day = year+"-"+month+"-"+date;
       
-      const tasks = await Action.find({date:day , time : {$gte:time,$lte:maxtime}});
+      const tasks = await Action.find({date:day , time :time});
 
       if(tasks.length===0){
-        console.log("No task",time,maxtime);
+        console.log("No task",time,day);
         return;
       }
 
@@ -138,26 +134,39 @@ exports.sendNotification = catchAsyncError( async(req,res,next)=>{
           });
         });
       }
-     },1000*60*5);
+     },1000*60);
 });
 
 
 exports.delectTasks = catchAsyncError(async (req,res,next)=>{
   setInterval( async()=>{
     const today = new Date();
+
     let hour = today.getHours();
     if(hour<10){
       hour = 0+""+hour;
     }
+
     let minute = today.getMinutes();
     minute=minute-1;
     if(minute<10){
       minute = 0+""+minute;
     }
+
     const time = hour+":"+minute;
+
     const year = today.getFullYear();
-    const month = today.getUTCMonth()+1;
-    const date = today.getDate();
+    
+    let month = today.getUTCMonth()+1;
+    if(month<10){
+      month = 0+""+month;
+    }
+
+    let date = today.getDate();
+    if(date<10){
+      date = 0+""+date;
+    }
+
     const day = year+"-"+month+"-"+date;
     const tasks = await Action.find({date:day , time : time});
 
